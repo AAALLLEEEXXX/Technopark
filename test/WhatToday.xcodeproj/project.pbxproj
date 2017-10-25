@@ -62,6 +62,9 @@
 		1F7199261F8D424E00504EB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F75C9851F908BCB00B1B40A /* SecondStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondStoryboard.storyboard; sourceTree = "<group>"; };
 		1F75C9871F908C5100B1B40A /* SecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
+		1F7B26601FA0C3B800E46CB9 /* icon_menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_menu@3x.png"; path = "../../../../Downloads/SimpleSlideMenu/Resources/icon_menu@3x.png"; sourceTree = "<group>"; };
+		1F7B26611FA0C3B800E46CB9 /* icon_menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_menu@2x.png"; path = "../../../../Downloads/SimpleSlideMenu/Resources/icon_menu@2x.png"; sourceTree = "<group>"; };
+		1F7B26621FA0C3B800E46CB9 /* icon_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_menu.png; path = ../../../../Downloads/SimpleSlideMenu/Resources/icon_menu.png; sourceTree = "<group>"; };
 		1F8372001F90DF90003DBF47 /* Massiv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Massiv.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +96,9 @@
 		1F1313D51F91235400C6F872 /* Resourse */ = {
 			isa = PBXGroup;
 			children = (
+				1F7B26621FA0C3B800E46CB9 /* icon_menu.png */,
+				1F7B26611FA0C3B800E46CB9 /* icon_menu@2x.png */,
+				1F7B26601FA0C3B800E46CB9 /* icon_menu@3x.png */,
 			);
 			path = Resourse;
 			sourceTree = "<group>";
