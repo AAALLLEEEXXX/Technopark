@@ -9,7 +9,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Second Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="7i9-RZ-Due">
+            <objects>
+                <navigationController id="Z1k-RB-sBm" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zce-fJ-4JW">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="HU1-jo-ZkU" kind="relationship" relationship="rootViewController" id="yze-ey-lSb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hlR-i9-dJK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1236" y="156"/>
+        </scene>
+        <!--Data-->
         <scene sceneID="pUu-fE-PtW">
             <objects>
                 <viewController storyboardIdentifier="second_vc" id="HU1-jo-ZkU" customClass="SecondController" customModule="WhatToday" customModuleProvider="target" sceneMemberID="viewController">
@@ -64,6 +80,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Qh-bi-txh"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Data" id="Gxg-Q5-l23">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="22Y-31-hkX"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="xOX-JN-vuu" id="tVV-yz-uGX"/>
                     </connections>
