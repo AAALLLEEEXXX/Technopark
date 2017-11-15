@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
@@ -20,6 +21,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
     let days_arr = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"]
     let months_arr = ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"]
    
+    public var fileURL: URL?
+    
+    
     //Picker view
     let my_pickerView = UIPickerView()
     
@@ -32,6 +36,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addEvent()
+      
+        
+    print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         text_field_months.delegate = self
         text_field_days.delegate = self
@@ -40,13 +48,27 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
         my_pickerView.dataSource = self
         text_field_days.inputView = my_pickerView
         text_field_months.inputView = my_pickerView
-        threeButton.applyDesign3()
+ 
         
         create_toolbar()
+        
     }
     
-
     
+    func addEvent(){
+        /*let adddata = EventsDB()
+        adddata.dataMonth = "Апрель"
+        adddata.dataDay = "1"
+        adddata.desc = ""
+        adddata.link = ""
+        
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(adddata)
+            print("Added\(adddata.dataMonth) to Realm")
+        }*/
+}
     
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -73,13 +95,68 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
         return current_arr.count
     }
     
+    
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return current_arr[row]
     }
     
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print("Selected item is", current_arr[row])
         active_textField.text = current_arr[row]
+        
+        let realm = try! Realm()
+        
+        let events = realm.objects(EventsDB.self)
+        
+        
+        if ((text_field_months.text) == "Апрель")
+        {
+            if ((text_field_days.text) == "1")
+            {
+                print(events.filter("dataMonth == %@ && dataDay ==%@",months_arr[3], days_arr[0]))
+            }
+            if ((text_field_days.text) == "2")
+            {
+                print(events.filter("dataMonth == %@ && dataDay ==%@",months_arr[3], days_arr[1]))
+            }
+            if ((text_field_days.text) == "3")
+            {
+                print(events.filter("dataMonth == %@ && dataDay ==%@",months_arr[3], days_arr[2]))
+            }
+            if ((text_field_days.text) == "4")
+            {
+                print(events.filter("dataMonth == %@ && dataDay ==%@",months_arr[3], days_arr[3]))
+            }
+            if ((text_field_days.text) == "5")
+            {
+                print(events.filter("dataMonth == %@ && dataDay ==%@",months_arr[3], days_arr[4]))
+            }
+            if ((text_field_days.text) == "6")
+            {
+                print(events.filter("dataMonth == %@ && dataDay ==%@",months_arr[3], days_arr[5]))
+            }
+            if ((text_field_days.text) == "7")
+            {
+                print(events.filter("dataMonth == %@ && dataDay ==%@",months_arr[3], days_arr[6]))
+            }
+            if ((text_field_days.text) == "8")
+            {
+                print(events.filter("dataMonth == %@ && dataDay ==%@",months_arr[3], days_arr[7]))
+            }
+            if ((text_field_days.text) == "9")
+            {
+                print(events.filter("dataMonth == %@ && dataDay ==%@",months_arr[3], days_arr[8]))
+            }
+            print("События найдены")
+            
+        }
+        else{
+            print("События не найдены")
+        }
+        
+        
     }
     
     //создание toolbar
@@ -110,23 +187,5 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
         active_textField.text = ""
         active_textField.resignFirstResponder()
     }
-    
-    
-    
-    
-    
-}
-
-extension UIButton{
-    func  applyDesign3(){
-        self.backgroundColor = UIColor.white
-        self.layer.cornerRadius = self.frame.height / 2
-        self.setTitleColor(UIColor.blue, for: .normal)
-        
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowRadius = 3
-        self.layer.shadowOpacity = 0.5
-        self.layer.shadowOffset = CGSize(width: 0, height: 0)
-}
 }
 

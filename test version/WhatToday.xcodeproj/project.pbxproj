@@ -13,8 +13,10 @@
 		1F132BC51F923D84003C26FC /* FirstController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F132BC41F923D84003C26FC /* FirstController.swift */; };
 		1F132BC71F9248FA003C26FC /* ThreeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F132BC61F9248FA003C26FC /* ThreeStoryboard.storyboard */; };
 		1F132BC91F92499C003C26FC /* ThreeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F132BC81F92499C003C26FC /* ThreeController.swift */; };
+		1F2632EC1FB60B5D00B03210 /* EventsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2632EB1FB60B5D00B03210 /* EventsDB.swift */; };
 		1F26B15F1F9FD285002D39B6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26B15E1F9FD285002D39B6 /* MenuViewController.swift */; };
 		1F26B1611F9FD341002D39B6 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26B1601F9FD341002D39B6 /* MenuTableViewCell.swift */; };
+		1F5BB0851FBC8970006F36D5 /* DataBase in Resources */ = {isa = PBXBuildFile; fileRef = 1F5BB0841FBC8970006F36D5 /* DataBase */; };
 		1F7199051F8D424E00504EB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7199041F8D424E00504EB3 /* AppDelegate.swift */; };
 		1F7199071F8D424E00504EB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7199061F8D424E00504EB3 /* ViewController.swift */; };
 		1F71990A1F8D424E00504EB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7199081F8D424E00504EB3 /* Main.storyboard */; };
@@ -25,6 +27,7 @@
 		1F75C9861F908BCB00B1B40A /* SecondStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F75C9851F908BCB00B1B40A /* SecondStoryboard.storyboard */; };
 		1F75C9881F908C5100B1B40A /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F75C9871F908C5100B1B40A /* SecondController.swift */; };
 		1F8372011F90DF90003DBF47 /* Massiv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8372001F90DF90003DBF47 /* Massiv.swift */; };
+		1FB39ABA1FBB72E500AF4539 /* Pure-Dark-Blue-Ocean-Gradation-Blur-Background-iPhone-6-wallpaper-ilikewallpaper_com_750.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1FB39AB91FBB72E500AF4539 /* Pure-Dark-Blue-Ocean-Gradation-Blur-Background-iPhone-6-wallpaper-ilikewallpaper_com_750.jpg */; };
 		92D69C9696514E27C1398224 /* Pods_WhatToday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDE2CBB663CF7F6D0AED5B3 /* Pods_WhatToday.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +48,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1F2632F31FB614B100B03210 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1F0AC72F1FAD914B00EA05CA /* icon_menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_menu@2x.png"; sourceTree = "<group>"; };
 		1F0AC7301FAD914C00EA05CA /* icon_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_menu.png; sourceTree = "<group>"; };
@@ -52,8 +68,10 @@
 		1F132BC41F923D84003C26FC /* FirstController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstController.swift; sourceTree = "<group>"; };
 		1F132BC61F9248FA003C26FC /* ThreeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThreeStoryboard.storyboard; sourceTree = "<group>"; };
 		1F132BC81F92499C003C26FC /* ThreeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeController.swift; sourceTree = "<group>"; };
+		1F2632EB1FB60B5D00B03210 /* EventsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventsDB.swift; path = ../EventsDB.swift; sourceTree = "<group>"; };
 		1F26B15E1F9FD285002D39B6 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		1F26B1601F9FD341002D39B6 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		1F5BB0841FBC8970006F36D5 /* DataBase */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DataBase; sourceTree = "<group>"; };
 		1F7199011F8D424E00504EB3 /* WhatToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7199041F8D424E00504EB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F7199061F8D424E00504EB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +88,7 @@
 		1F75C9851F908BCB00B1B40A /* SecondStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondStoryboard.storyboard; sourceTree = "<group>"; };
 		1F75C9871F908C5100B1B40A /* SecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
 		1F8372001F90DF90003DBF47 /* Massiv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Massiv.swift; sourceTree = "<group>"; };
+		1FB39AB91FBB72E500AF4539 /* Pure-Dark-Blue-Ocean-Gradation-Blur-Background-iPhone-6-wallpaper-ilikewallpaper_com_750.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Pure-Dark-Blue-Ocean-Gradation-Blur-Background-iPhone-6-wallpaper-ilikewallpaper_com_750.jpg"; path = "../../../../Desktop/Pure-Dark-Blue-Ocean-Gradation-Blur-Background-iPhone-6-wallpaper-ilikewallpaper_com_750.jpg"; sourceTree = "<group>"; };
 		4BDE2CBB663CF7F6D0AED5B3 /* Pods_WhatToday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatToday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEEC9BCA5C625D90E217553 /* Pods-WhatToday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToday.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhatToday/Pods-WhatToday.debug.xcconfig"; sourceTree = "<group>"; };
 		F9F1BA7FBB2DAA4C0325E48C /* Pods-WhatToday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToday.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhatToday/Pods-WhatToday.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +123,7 @@
 		1F1313D51F91235400C6F872 /* Resourse */ = {
 			isa = PBXGroup;
 			children = (
+				1FB39AB91FBB72E500AF4539 /* Pure-Dark-Blue-Ocean-Gradation-Blur-Background-iPhone-6-wallpaper-ilikewallpaper_com_750.jpg */,
 				1F0AC7301FAD914C00EA05CA /* icon_menu.png */,
 				1F0AC72F1FAD914B00EA05CA /* icon_menu@2x.png */,
 				1F0AC7311FAD914C00EA05CA /* icon_menu@3x.png */,
@@ -118,6 +138,7 @@
 				1F7199181F8D424E00504EB3 /* WhatTodayTests */,
 				1F7199231F8D424E00504EB3 /* WhatTodayUITests */,
 				1F7199021F8D424E00504EB3 /* Products */,
+				1F5BB0841FBC8970006F36D5 /* DataBase */,
 				4F69800AF00763E2C1E0658A /* Pods */,
 				CFFB312D8FA909C5623AC4DD /* Frameworks */,
 			);
@@ -141,6 +162,7 @@
 				1F26B15E1F9FD285002D39B6 /* MenuViewController.swift */,
 				1F26B1601F9FD341002D39B6 /* MenuTableViewCell.swift */,
 				1F7199061F8D424E00504EB3 /* ViewController.swift */,
+				1F2632EB1FB60B5D00B03210 /* EventsDB.swift */,
 				1F75C9871F908C5100B1B40A /* SecondController.swift */,
 				1F132BC81F92499C003C26FC /* ThreeController.swift */,
 				1F8372001F90DF90003DBF47 /* Massiv.swift */,
@@ -203,6 +225,7 @@
 				1F7198FF1F8D424E00504EB3 /* Resources */,
 				8949BE33BF7FA9536ECC81AF /* [CP] Embed Pods Frameworks */,
 				41ED89B9B40ECCA4FC121ECE /* [CP] Copy Pods Resources */,
+				1F2632F31FB614B100B03210 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -301,7 +324,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F71990F1F8D424E00504EB3 /* LaunchScreen.storyboard in Resources */,
+				1FB39ABA1FBB72E500AF4539 /* Pure-Dark-Blue-Ocean-Gradation-Blur-Background-iPhone-6-wallpaper-ilikewallpaper_com_750.jpg in Resources */,
 				1F132BC71F9248FA003C26FC /* ThreeStoryboard.storyboard in Resources */,
+				1F5BB0851FBC8970006F36D5 /* DataBase in Resources */,
 				1F71990C1F8D424E00504EB3 /* Assets.xcassets in Resources */,
 				1F0AC7341FAD914C00EA05CA /* icon_menu@3x.png in Resources */,
 				1F0AC7331FAD914C00EA05CA /* icon_menu.png in Resources */,
@@ -393,6 +418,7 @@
 				1F26B1611F9FD341002D39B6 /* MenuTableViewCell.swift in Sources */,
 				1F132BC91F92499C003C26FC /* ThreeController.swift in Sources */,
 				1F26B15F1F9FD285002D39B6 /* MenuViewController.swift in Sources */,
+				1F2632EC1FB60B5D00B03210 /* EventsDB.swift in Sources */,
 				1F132BC51F923D84003C26FC /* FirstController.swift in Sources */,
 				1F8372011F90DF90003DBF47 /* Massiv.swift in Sources */,
 				1F7199051F8D424E00504EB3 /* AppDelegate.swift in Sources */,

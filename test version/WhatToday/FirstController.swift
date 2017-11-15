@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import RealmSwift
+
 
 class FirstController: UIViewController {
     
@@ -19,9 +21,8 @@ class FirstController: UIViewController {
     
 override func viewDidLoad() {
     super.viewDidLoad()
-  
-    firstButton.applyDesign1()
-    secondButton.applyDesign3()
+    print(Realm.Configuration.defaultConfiguration.fileURL!)
+    
     
     menuVC = self.storyboard?.instantiateViewController(withIdentifier: "MenuVC") as! MenuViewController
     
@@ -33,7 +34,12 @@ override func viewDidLoad() {
     
     self.view.addGestureRecognizer(swipeRight)
     self.view.addGestureRecognizer(swipeLeft)
+    
 }
+   
+    
+    
+    
     
     @objc func  handleSwipe(gesture: UISwipeGestureRecognizer){
         switch gesture.direction {
@@ -79,35 +85,5 @@ override func viewDidLoad() {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
-    }
-    
-    
-    
-}
-
-
-
-
-extension UIButton{
-    func  applyDesign1(){
-        self.backgroundColor = UIColor.white
-        self.layer.cornerRadius = self.frame.height / 2
-        self.setTitleColor(UIColor.blue, for: .normal)
-        
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowRadius = 3
-        self.layer.shadowOpacity = 0.5
-        self.layer.shadowOffset = CGSize(width: 0, height: 0)
-    }
-    
-    func  applyDesign2(){
-        self.backgroundColor = UIColor.white
-        self.layer.cornerRadius = self.frame.height / 2
-        self.setTitleColor(UIColor.blue, for: .normal)
-        
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowRadius = 3
-        self.layer.shadowOpacity = 0.5
-        self.layer.shadowOffset = CGSize(width: 0, height: 0)
     }
 }

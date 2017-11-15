@@ -14,19 +14,24 @@ class SecondController: UIViewController, UITableViewDelegate{
     @IBOutlet weak var tableView: UITableView!
     
     let massiv = [
-        Massiv(name:"1994/08/01", flickrID: "С космодрома Байконур осуществлен запуск космического коробля Союз ТМ-18"),
-        Massiv(name:"1996/08/01", flickrID: "Катастрофа АН-32 в Киншасе"),
-        Massiv(name:"2003/08/01", flickrID: "Катастрофа Beechcraft в Шарлотте"),
-        Massiv(name:"2004/08/01", flickrID: "Церемония крещения морского суперлайнера"),
+        Massiv(name:"08/01", flickrID: "С космодрома Байконур осуществлен запуск космического коробля Союз ТМ-18"),
+        Massiv(name:"08/01", flickrID: "Катастрофа АН-32 в Киншасе"),
+        Massiv(name:"08/01", flickrID: "Катастрофа Beechcraft в Шарлотте"),
+        Massiv(name:"08/01", flickrID: "Церемония крещения морского суперлайнера"),
     ]
 
     override func viewDidLoad() {
         super .viewDidLoad()
+     
+        
         }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You select \(massiv[indexPath.row])")
     }
+  //  let sravndata = ViewController()
+   // sravndata.EventsDB.adddata.dataMonth == months_arr
+    
 }
     
 
