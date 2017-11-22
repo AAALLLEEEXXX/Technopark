@@ -3,7 +3,7 @@
 //  WhatToday
 //
 //  Created by Алексей on 10.10.17.
-//  Copyright © 2017 Алексей. All rights reserved.
+//  Copyright © 2017 Алексей и Игорь. All rights reserved.
 //
 
 import UIKit
@@ -54,7 +54,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
         
     }
     
-    
     func addEvent(){
         /*let adddata = EventsDB()
         adddata.dataMonth = "Апрель"
@@ -102,53 +101,28 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
     }
     
     
+    
+    
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print("Selected item is", current_arr[row])
         active_textField.text = current_arr[row]
         
-        let realm = try! Realm()
-        
+         let realm = try! Realm()
         let events = realm.objects(EventsDB.self)
+        //let predicate = NSPredicate(format: "dateMonth BEGINSWITH 'Апр'")
         
         
-        if ((text_field_months.text) == "Апрель")
+        
+          if ((text_field_months.text) == "Апрель")
         {
-            if ((text_field_days.text) == "1")
-            {
-                print(events.filter("dataMonth == %@ && dataDay ==%@",months_arr[3], days_arr[0]))
-            }
-            if ((text_field_days.text) == "2")
-            {
-                print(events.filter("dataMonth == %@ && dataDay ==%@",months_arr[3], days_arr[1]))
-            }
-            if ((text_field_days.text) == "3")
-            {
-                print(events.filter("dataMonth == %@ && dataDay ==%@",months_arr[3], days_arr[2]))
-            }
-            if ((text_field_days.text) == "4")
-            {
-                print(events.filter("dataMonth == %@ && dataDay ==%@",months_arr[3], days_arr[3]))
-            }
-            if ((text_field_days.text) == "5")
-            {
-                print(events.filter("dataMonth == %@ && dataDay ==%@",months_arr[3], days_arr[4]))
-            }
-            if ((text_field_days.text) == "6")
-            {
-                print(events.filter("dataMonth == %@ && dataDay ==%@",months_arr[3], days_arr[5]))
-            }
-            if ((text_field_days.text) == "7")
-            {
-                print(events.filter("dataMonth == %@ && dataDay ==%@",months_arr[3], days_arr[6]))
-            }
-            if ((text_field_days.text) == "8")
-            {
-                print(events.filter("dataMonth == %@ && dataDay ==%@",months_arr[3], days_arr[7]))
-            }
-            if ((text_field_days.text) == "9")
-            {
-                print(events.filter("dataMonth == %@ && dataDay ==%@",months_arr[3], days_arr[8]))
-            }
+            print(events.filter("dataMonth = 'Апрель'").sorted(byKeyPath: "dataDay", ascending: true))
+            print("События найдены")
+            
+        }
+        if ((text_field_months.text) == "Декабрь")
+        {
+            print(events.filter("dataMonth = 'Декабрь'").sorted(byKeyPath: "dataDay", ascending: true))
             print("События найдены")
             
         }
@@ -186,6 +160,21 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
     {
         active_textField.text = ""
         active_textField.resignFirstResponder()
+    }
+    
+    @IBAction func buttonPressed(_ sender: Any?) {
+        text_field_months.resignFirstResponder()
+        print(text_field_months.text)
+        performSegue(withIdentifier: "dateSend", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "dateSend" else {
+            return
+        }
+        let secondVC = segue.destination as? SecondController
+        secondVC?.monthForSearch = text_field_months.text
+    
     }
 }
 

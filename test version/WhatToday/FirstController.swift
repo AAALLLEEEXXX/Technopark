@@ -14,8 +14,7 @@ import RealmSwift
 class FirstController: UIViewController {
     
     @IBOutlet weak var menuBarButtonItem: UIBarButtonItem!
-    @IBOutlet weak var firstButton: UIButton!
-    @IBOutlet weak var secondButton: UIButton!
+
     
   var menuVC: MenuViewController!
     
