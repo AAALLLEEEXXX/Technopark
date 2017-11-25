@@ -36,10 +36,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addEvent()
-      
-        
-    print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         text_field_months.delegate = self
         text_field_days.delegate = self
@@ -48,27 +44,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
         my_pickerView.dataSource = self
         text_field_days.inputView = my_pickerView
         text_field_months.inputView = my_pickerView
- 
         
         create_toolbar()
-        
     }
-    
-    func addEvent(){
-        /*let adddata = EventsDB()
-        adddata.dataMonth = "Апрель"
-        adddata.dataDay = "1"
-        adddata.desc = ""
-        adddata.link = ""
-        
-        let realm = try! Realm()
-        
-        try! realm.write {
-            realm.add(adddata)
-            print("Added\(adddata.dataMonth) to Realm")
-        }*/
-}
-    
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         active_textField = textField
@@ -100,37 +78,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
         return current_arr[row]
     }
     
-    
-    
-    
-    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print("Selected item is", current_arr[row])
         active_textField.text = current_arr[row]
-        
-         let realm = try! Realm()
-        let events = realm.objects(EventsDB.self)
-        //let predicate = NSPredicate(format: "dateMonth BEGINSWITH 'Апр'")
-        
-        
-        
-          if ((text_field_months.text) == "Апрель")
-        {
-            print(events.filter("dataMonth = 'Апрель'").sorted(byKeyPath: "dataDay", ascending: true))
-            print("События найдены")
-            
-        }
-        if ((text_field_months.text) == "Декабрь")
-        {
-            print(events.filter("dataMonth = 'Декабрь'").sorted(byKeyPath: "dataDay", ascending: true))
-            print("События найдены")
-            
-        }
-        else{
-            print("События не найдены")
-        }
-        
-        
     }
     
     //создание toolbar
@@ -161,10 +111,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
         active_textField.text = ""
         active_textField.resignFirstResponder()
     }
-    
+
     @IBAction func buttonPressed(_ sender: Any?) {
         text_field_months.resignFirstResponder()
-        print(text_field_months.text)
+        text_field_days.resignFirstResponder()
         performSegue(withIdentifier: "dateSend", sender: nil)
     }
     
@@ -173,6 +123,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
             return
         }
         let secondVC = segue.destination as? SecondController
+        secondVC?.dayForSearch = text_field_days.text
         secondVC?.monthForSearch = text_field_months.text
     
     }

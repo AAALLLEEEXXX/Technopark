@@ -9,41 +9,44 @@
 import Foundation
 import UIKit
 import RealmSwift
-
+import SafariServices
 
 class SecondController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    
+    var linkGive: String?
+    var dayForSearch: String?
     var monthForSearch: String? {
         didSet {
             guard let monthForSearch = self.monthForSearch else {
                 return
             }
             
+            self.realevents = (try! Realm()).objects(EventsDB.self).filter("dataMonth = '\(monthForSearch)' && dataDay = '\(dayForSearch ?? "0")")
+        }
+    }
+
+    func showTutorial(_ which: Int) {
+        if let url = URL(string: "\((try! Realm()).objects(EventsDB.self).filter("link = '\(linkGive ?? "0")'"))") {
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
             
-            self.realevents = (try! Realm()).objects(EventsDB.self).filter("dataMonth = '\(monthForSearch)'")
+            let vc = SFSafariViewController(url: url, configuration: config)
+            present(vc, animated: true)
         }
     }
     
-    let realm = try! Realm()
-
-
     override func viewDidLoad() {
-        super.viewDidLoad()
+    super.viewDidLoad()
     }
-
-    //func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-   //     print("You select \(massiv[indexPath.row])")
-   // }
-  //  let sravndata = ViewController()
-   // sravndata.EventsDB.adddata.dataMonth == months_arr
-
 
     var realevents: Results<EventsDB>?
 }
 
 extension SecondController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showTutorial(indexPath.row)
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return realevents?.count ?? 0
     }

@@ -24,7 +24,6 @@
 		1F7199251F8D424E00504EB3 /* WhatTodayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7199241F8D424E00504EB3 /* WhatTodayUITests.swift */; };
 		1F75C9861F908BCB00B1B40A /* SecondStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F75C9851F908BCB00B1B40A /* SecondStoryboard.storyboard */; };
 		1F75C9881F908C5100B1B40A /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F75C9871F908C5100B1B40A /* SecondController.swift */; };
-		1FC6A3F01FC3783D00216E5D /* Pure-Dark-Blue-Ocean-Gradation-Blur-Background-iPhone-6-wallpaper-ilikewallpaper_com_750.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1FC6A3EF1FC3783D00216E5D /* Pure-Dark-Blue-Ocean-Gradation-Blur-Background-iPhone-6-wallpaper-ilikewallpaper_com_750.jpg */; };
 		92D69C9696514E27C1398224 /* Pods_WhatToday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDE2CBB663CF7F6D0AED5B3 /* Pods_WhatToday.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,7 +81,6 @@
 		1F7199261F8D424E00504EB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F75C9851F908BCB00B1B40A /* SecondStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondStoryboard.storyboard; sourceTree = "<group>"; };
 		1F75C9871F908C5100B1B40A /* SecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
-		1FC6A3EF1FC3783D00216E5D /* Pure-Dark-Blue-Ocean-Gradation-Blur-Background-iPhone-6-wallpaper-ilikewallpaper_com_750.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Pure-Dark-Blue-Ocean-Gradation-Blur-Background-iPhone-6-wallpaper-ilikewallpaper_com_750.jpg"; path = "../../../../../Desktop/Pure-Dark-Blue-Ocean-Gradation-Blur-Background-iPhone-6-wallpaper-ilikewallpaper_com_750.jpg"; sourceTree = "<group>"; };
 		4BDE2CBB663CF7F6D0AED5B3 /* Pods_WhatToday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatToday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEEC9BCA5C625D90E217553 /* Pods-WhatToday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToday.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhatToday/Pods-WhatToday.debug.xcconfig"; sourceTree = "<group>"; };
 		F9F1BA7FBB2DAA4C0325E48C /* Pods-WhatToday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToday.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhatToday/Pods-WhatToday.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,7 +115,6 @@
 		1F1313D51F91235400C6F872 /* Resourse */ = {
 			isa = PBXGroup;
 			children = (
-				1FC6A3EF1FC3783D00216E5D /* Pure-Dark-Blue-Ocean-Gradation-Blur-Background-iPhone-6-wallpaper-ilikewallpaper_com_750.jpg */,
 				1F0AC7301FAD914C00EA05CA /* icon_menu.png */,
 				1F0AC72F1FAD914B00EA05CA /* icon_menu@2x.png */,
 				1F0AC7311FAD914C00EA05CA /* icon_menu@3x.png */,
@@ -275,7 +272,7 @@
 				TargetAttributes = {
 					1F7199001F8D424E00504EB3 = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					1F7199141F8D424E00504EB3 = {
 						CreatedOnToolsVersion = 9.0;
@@ -315,7 +312,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F71990F1F8D424E00504EB3 /* LaunchScreen.storyboard in Resources */,
-				1FC6A3F01FC3783D00216E5D /* Pure-Dark-Blue-Ocean-Gradation-Blur-Background-iPhone-6-wallpaper-ilikewallpaper_com_750.jpg in Resources */,
 				1F5BB0851FBC8970006F36D5 /* DataBase in Resources */,
 				1F71990C1F8D424E00504EB3 /* Assets.xcassets in Resources */,
 				1F0AC7341FAD914C00EA05CA /* icon_menu@3x.png in Resources */,
@@ -576,11 +572,14 @@
 			baseConfigurationReference = BAEEC9BCA5C625D90E217553 /* Pods-WhatToday.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WhatToday/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Technopark.WhatToday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -591,11 +590,14 @@
 			baseConfigurationReference = F9F1BA7FBB2DAA4C0325E48C /* Pods-WhatToday.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WhatToday/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Technopark.WhatToday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
