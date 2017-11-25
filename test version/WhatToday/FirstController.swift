@@ -14,12 +14,18 @@ import RealmSwift
 class FirstController: UIViewController {
     
     @IBOutlet weak var menuBarButtonItem: UIBarButtonItem!
-
+    
+    
     
   var menuVC: MenuViewController!
     
 override func viewDidLoad() {
     super.viewDidLoad()
+    
+    //новое
+   
+    //новое конец
+    
     print(Realm.Configuration.defaultConfiguration.fileURL!)
     
     

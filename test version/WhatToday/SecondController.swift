@@ -14,14 +14,21 @@ import RealmSwift
 class SecondController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    var configuration: Realm.Configuration!
     var dayForSearch: String?
     var monthForSearch: String? {
         didSet {
             guard let monthForSearch = self.monthForSearch else {
                 return
             }
+            let config = Realm.Configuration(
+                // Get the URL to the bundled file
+                fileURL: Bundle.main.url(forResource: "default", withExtension: "realm"),
+                // Open the file in read-only mode as application bundles are not writeable
+                readOnly: true)
+            let realm = try! Realm(configuration: config)
             
-            self.realevents = (try! Realm()).objects(EventsDB.self).filter("dataMonth = '\(monthForSearch)' && dataDay = '\(dayForSearch ?? "0")'")
+            self.realevents = realm.objects(EventsDB.self).filter("dataMonth = '\(monthForSearch)' && dataDay = '\(dayForSearch ?? "0")'")
         }
     }
 
