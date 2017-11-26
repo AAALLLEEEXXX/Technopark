@@ -3,10 +3,12 @@
 //  WhatToday
 //
 //  Created by Алексей on 10.10.17.
-//  Copyright © 2017 Алексей. All rights reserved.
+//  Copyright © 2017 Алексей и Игорь. All rights reserved.
 //
 
 import UIKit
+import RealmSwift
+
 
 class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
@@ -20,6 +22,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
     let days_arr = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"]
     let months_arr = ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"]
    
+    public var fileURL: URL?
+    
+    
     //Picker view
     let my_pickerView = UIPickerView()
     
@@ -40,14 +45,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
         my_pickerView.dataSource = self
         text_field_days.inputView = my_pickerView
         text_field_months.inputView = my_pickerView
-        threeButton.applyDesign3()
         
         create_toolbar()
     }
-    
-
-    
-    
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         active_textField = textField
@@ -72,6 +72,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return current_arr.count
     }
+    
+    
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return current_arr[row]
@@ -110,23 +112,21 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
         active_textField.text = ""
         active_textField.resignFirstResponder()
     }
-    
-    
-    
-    
-    
-}
 
-extension UIButton{
-    func  applyDesign3(){
-        self.backgroundColor = UIColor.white
-        self.layer.cornerRadius = self.frame.height / 2
-        self.setTitleColor(UIColor.blue, for: .normal)
-        
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowRadius = 3
-        self.layer.shadowOpacity = 0.5
-        self.layer.shadowOffset = CGSize(width: 0, height: 0)
-}
+    @IBAction func buttonPressed(_ sender: Any?) {
+        text_field_months.resignFirstResponder()
+        text_field_days.resignFirstResponder()
+        performSegue(withIdentifier: "dateSend", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "dateSend" else {
+            return
+        }
+        let secondVC = segue.destination as? SecondController
+        secondVC?.dayForSearch = text_field_days.text
+        secondVC?.monthForSearch = text_field_months.text
+    
+    }
 }
 
