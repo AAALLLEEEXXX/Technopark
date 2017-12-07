@@ -24,6 +24,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
     public var fileURL: URL?
     
     
+   // var notificationToken: NotificationToken?
+    //var event = List<EventDB>()
+   // var notificationToken: NotificationToken?
+    //var event : Results<EventDB>?
+    
     //Picker view
     let my_pickerView = UIPickerView()
     
@@ -37,6 +42,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         text_field_months.delegate = self
         text_field_days.delegate = self
         
@@ -47,6 +53,22 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
         
         create_toolbar()
     }
+    
+    
+    
+    /* func loadEvent(){
+        
+       let realm = try! Realm()
+        
+        notificationTokens = realm.addNotificationBlock {_, _ in
+            self.tableView.reloadData()
+        }
+        
+        self.tableView.reloadData()
+    }*/
+    
+    
+    
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         active_textField = textField
@@ -128,4 +150,3 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
     
     }
 }
-
