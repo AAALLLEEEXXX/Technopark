@@ -9,23 +9,63 @@
 import Foundation
 import UIKit
 import RealmSwift
-
+import UserNotifications
 
 class FirstController: UIViewController {
     
     @IBOutlet weak var menuBarButtonItem: UIBarButtonItem!
+
     
-    
+    @IBAction func sendNotification(sender: UIButton) {
+        scheduleNotification(inSeconds: 5) { (success) in
+            if success {
+                print("we send it")
+            } else{
+                print("Failed")
+            }
+        }
+    }
     
   var menuVC: MenuViewController!
     
+    
+    func scheduleNotification(inSeconds seconds: TimeInterval, completion: (Bool) ->()){
+        
+        remuveNotifications(withIdentifiers: ["MyUniqueIdentifier"])
+        
+        let date = Date(timeIntervalSinceNow: seconds)
+        print(Data())
+        print(date)
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Посмотрите сегодняшние события"
+        content.body = "Сегодня в подборке событий мы вам представим....."
+        content.sound = UNNotificationSound.default()
+        
+        let calendar = Calendar(identifier: .gregorian)
+        let components = calendar.dateComponents([.month, .day, .hour, .minute, .second], from: date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
+        let request = UNNotificationRequest(identifier: "MyUniqueIdentifier", content: content, trigger: trigger)
+        
+        let center = UNUserNotificationCenter.current()
+        center.add(request, withCompletionHandler: nil)
+        
+    }
+    
+    func remuveNotifications(withIdentifiers identifiers: [String]) {
+        let center = UNUserNotificationCenter.current()
+        center.removePendingNotificationRequests(withIdentifiers: identifiers)
+    }
+    
+    deinit {
+        remuveNotifications(withIdentifiers: ["MyUniqueIdentifier"])
+    }
+    
+    
+    
+    
 override func viewDidLoad() {
     super.viewDidLoad()
-    
-    //новое
-   
-    //новое конец
-    
     print(Realm.Configuration.defaultConfiguration.fileURL!)
     
     

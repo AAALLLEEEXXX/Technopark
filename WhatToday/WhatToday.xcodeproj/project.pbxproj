@@ -11,7 +11,7 @@
 		1F0AC7331FAD914C00EA05CA /* icon_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F0AC7301FAD914C00EA05CA /* icon_menu.png */; };
 		1F0AC7341FAD914C00EA05CA /* icon_menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F0AC7311FAD914C00EA05CA /* icon_menu@3x.png */; };
 		1F132BC51F923D84003C26FC /* FirstController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F132BC41F923D84003C26FC /* FirstController.swift */; };
-		1F2632EC1FB60B5D00B03210 /* EventsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2632EB1FB60B5D00B03210 /* EventsDB.swift */; };
+		1F2632EC1FB60B5D00B03210 /* EventDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2632EB1FB60B5D00B03210 /* EventDB.swift */; };
 		1F26B15F1F9FD285002D39B6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26B15E1F9FD285002D39B6 /* MenuViewController.swift */; };
 		1F26B1611F9FD341002D39B6 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26B1601F9FD341002D39B6 /* MenuTableViewCell.swift */; };
 		1F7199051F8D424E00504EB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7199041F8D424E00504EB3 /* AppDelegate.swift */; };
@@ -23,8 +23,6 @@
 		1F7199251F8D424E00504EB3 /* WhatTodayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7199241F8D424E00504EB3 /* WhatTodayUITests.swift */; };
 		1F75C9861F908BCB00B1B40A /* SecondStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F75C9851F908BCB00B1B40A /* SecondStoryboard.storyboard */; };
 		1F75C9881F908C5100B1B40A /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F75C9871F908C5100B1B40A /* SecondController.swift */; };
-		22019D5F1FC9F2FF0072D045 /* Pure-Dark-Blue-Ocean-Gradation-Blur-Background-iPhone-6-wallpaper-ilikewallpaper_com_750.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22019D5E1FC9F2FE0072D045 /* Pure-Dark-Blue-Ocean-Gradation-Blur-Background-iPhone-6-wallpaper-ilikewallpaper_com_750.jpg */; };
-		22019D611FCA27AE0072D045 /* default.realm in Resources */ = {isa = PBXBuildFile; fileRef = 22019D601FCA27AE0072D045 /* default.realm */; };
 		92D69C9696514E27C1398224 /* Pods_WhatToday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDE2CBB663CF7F6D0AED5B3 /* Pods_WhatToday.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,7 +61,7 @@
 		1F0AC7301FAD914C00EA05CA /* icon_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_menu.png; sourceTree = "<group>"; };
 		1F0AC7311FAD914C00EA05CA /* icon_menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_menu@3x.png"; sourceTree = "<group>"; };
 		1F132BC41F923D84003C26FC /* FirstController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstController.swift; sourceTree = "<group>"; };
-		1F2632EB1FB60B5D00B03210 /* EventsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventsDB.swift; path = ../EventsDB.swift; sourceTree = "<group>"; };
+		1F2632EB1FB60B5D00B03210 /* EventDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventDB.swift; path = ../EventDB.swift; sourceTree = "<group>"; };
 		1F26B15E1F9FD285002D39B6 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		1F26B1601F9FD341002D39B6 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		1F7199011F8D424E00504EB3 /* WhatToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,8 +79,6 @@
 		1F7199261F8D424E00504EB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F75C9851F908BCB00B1B40A /* SecondStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondStoryboard.storyboard; sourceTree = "<group>"; };
 		1F75C9871F908C5100B1B40A /* SecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
-		22019D5E1FC9F2FE0072D045 /* Pure-Dark-Blue-Ocean-Gradation-Blur-Background-iPhone-6-wallpaper-ilikewallpaper_com_750.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Pure-Dark-Blue-Ocean-Gradation-Blur-Background-iPhone-6-wallpaper-ilikewallpaper_com_750.jpg"; sourceTree = "<group>"; };
-		22019D601FCA27AE0072D045 /* default.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.realm; sourceTree = "<group>"; };
 		4BDE2CBB663CF7F6D0AED5B3 /* Pods_WhatToday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatToday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEEC9BCA5C625D90E217553 /* Pods-WhatToday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToday.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhatToday/Pods-WhatToday.debug.xcconfig"; sourceTree = "<group>"; };
 		F9F1BA7FBB2DAA4C0325E48C /* Pods-WhatToday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToday.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhatToday/Pods-WhatToday.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,8 +113,6 @@
 		1F1313D51F91235400C6F872 /* Resourse */ = {
 			isa = PBXGroup;
 			children = (
-				22019D5E1FC9F2FE0072D045 /* Pure-Dark-Blue-Ocean-Gradation-Blur-Background-iPhone-6-wallpaper-ilikewallpaper_com_750.jpg */,
-				22019D601FCA27AE0072D045 /* default.realm */,
 				1F0AC7301FAD914C00EA05CA /* icon_menu.png */,
 				1F0AC72F1FAD914B00EA05CA /* icon_menu@2x.png */,
 				1F0AC7311FAD914C00EA05CA /* icon_menu@3x.png */,
@@ -156,7 +150,7 @@
 				1F26B15E1F9FD285002D39B6 /* MenuViewController.swift */,
 				1F26B1601F9FD341002D39B6 /* MenuTableViewCell.swift */,
 				1F7199061F8D424E00504EB3 /* ViewController.swift */,
-				1F2632EB1FB60B5D00B03210 /* EventsDB.swift */,
+				1F2632EB1FB60B5D00B03210 /* EventDB.swift */,
 				1F75C9871F908C5100B1B40A /* SecondController.swift */,
 				1F7199081F8D424E00504EB3 /* Main.storyboard */,
 				1F75C9851F908BCB00B1B40A /* SecondStoryboard.storyboard */,
@@ -275,7 +269,7 @@
 				TargetAttributes = {
 					1F7199001F8D424E00504EB3 = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					1F7199141F8D424E00504EB3 = {
 						CreatedOnToolsVersion = 9.0;
@@ -316,13 +310,11 @@
 			files = (
 				1F71990F1F8D424E00504EB3 /* LaunchScreen.storyboard in Resources */,
 				1F71990C1F8D424E00504EB3 /* Assets.xcassets in Resources */,
-				22019D611FCA27AE0072D045 /* default.realm in Resources */,
 				1F0AC7341FAD914C00EA05CA /* icon_menu@3x.png in Resources */,
 				1F0AC7331FAD914C00EA05CA /* icon_menu.png in Resources */,
 				1F71990A1F8D424E00504EB3 /* Main.storyboard in Resources */,
 				1F0AC7321FAD914C00EA05CA /* icon_menu@2x.png in Resources */,
 				1F75C9861F908BCB00B1B40A /* SecondStoryboard.storyboard in Resources */,
-				22019D5F1FC9F2FF0072D045 /* Pure-Dark-Blue-Ocean-Gradation-Blur-Background-iPhone-6-wallpaper-ilikewallpaper_com_750.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +399,7 @@
 				1F7199071F8D424E00504EB3 /* ViewController.swift in Sources */,
 				1F26B1611F9FD341002D39B6 /* MenuTableViewCell.swift in Sources */,
 				1F26B15F1F9FD285002D39B6 /* MenuViewController.swift in Sources */,
-				1F2632EC1FB60B5D00B03210 /* EventsDB.swift in Sources */,
+				1F2632EC1FB60B5D00B03210 /* EventDB.swift in Sources */,
 				1F132BC51F923D84003C26FC /* FirstController.swift in Sources */,
 				1F7199051F8D424E00504EB3 /* AppDelegate.swift in Sources */,
 			);
@@ -576,16 +568,12 @@
 			baseConfigurationReference = BAEEC9BCA5C625D90E217553 /* Pods-WhatToday.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WhatToday/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Technopark.WhatToday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -596,16 +584,12 @@
 			baseConfigurationReference = F9F1BA7FBB2DAA4C0325E48C /* Pods-WhatToday.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WhatToday/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Technopark.WhatToday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
