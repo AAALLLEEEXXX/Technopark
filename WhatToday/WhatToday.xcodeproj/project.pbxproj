@@ -12,7 +12,6 @@
 		1F0AC7341FAD914C00EA05CA /* icon_menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F0AC7311FAD914C00EA05CA /* icon_menu@3x.png */; };
 		1F132BC51F923D84003C26FC /* FirstController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F132BC41F923D84003C26FC /* FirstController.swift */; };
 		1F2632EC1FB60B5D00B03210 /* EventDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2632EB1FB60B5D00B03210 /* EventDB.swift */; };
-		1F26B15F1F9FD285002D39B6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26B15E1F9FD285002D39B6 /* MenuViewController.swift */; };
 		1F26B1611F9FD341002D39B6 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26B1601F9FD341002D39B6 /* MenuTableViewCell.swift */; };
 		1F7199051F8D424E00504EB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7199041F8D424E00504EB3 /* AppDelegate.swift */; };
 		1F7199071F8D424E00504EB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7199061F8D424E00504EB3 /* ViewController.swift */; };
@@ -62,7 +61,6 @@
 		1F0AC7311FAD914C00EA05CA /* icon_menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_menu@3x.png"; sourceTree = "<group>"; };
 		1F132BC41F923D84003C26FC /* FirstController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstController.swift; sourceTree = "<group>"; };
 		1F2632EB1FB60B5D00B03210 /* EventDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventDB.swift; path = ../EventDB.swift; sourceTree = "<group>"; };
-		1F26B15E1F9FD285002D39B6 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		1F26B1601F9FD341002D39B6 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		1F7199011F8D424E00504EB3 /* WhatToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7199041F8D424E00504EB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 			children = (
 				1F7199041F8D424E00504EB3 /* AppDelegate.swift */,
 				1F132BC41F923D84003C26FC /* FirstController.swift */,
-				1F26B15E1F9FD285002D39B6 /* MenuViewController.swift */,
 				1F26B1601F9FD341002D39B6 /* MenuTableViewCell.swift */,
 				1F7199061F8D424E00504EB3 /* ViewController.swift */,
 				1F2632EB1FB60B5D00B03210 /* EventDB.swift */,
@@ -337,7 +334,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		41ED89B9B40ECCA4FC121ECE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -345,7 +342,7 @@
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhatToday/Pods-WhatToday-resources.sh\"\n";
 			showEnvVarsInLog = 0;
@@ -398,7 +395,6 @@
 				1F75C9881F908C5100B1B40A /* SecondController.swift in Sources */,
 				1F7199071F8D424E00504EB3 /* ViewController.swift in Sources */,
 				1F26B1611F9FD341002D39B6 /* MenuTableViewCell.swift in Sources */,
-				1F26B15F1F9FD285002D39B6 /* MenuViewController.swift in Sources */,
 				1F2632EC1FB60B5D00B03210 /* EventDB.swift in Sources */,
 				1F132BC51F923D84003C26FC /* FirstController.swift in Sources */,
 				1F7199051F8D424E00504EB3 /* AppDelegate.swift in Sources */,

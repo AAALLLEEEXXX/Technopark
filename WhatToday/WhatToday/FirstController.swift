@@ -10,11 +10,17 @@ import Foundation
 import UIKit
 import RealmSwift
 import UserNotifications
+import SafariServices
 
-class FirstController: UIViewController {
+class FirstController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var menuBarButtonItem: UIBarButtonItem!
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    var realm: Realm! //= try! Realm(configuration: configuration)
+    var realevents: Results<EventDB>?
+    var notificationToken: NotificationToken?
+    var event = List<EventDB>()
     
     @IBAction func sendNotification(sender: UIButton) {
         scheduleNotification(inSeconds: 5) { (success) in
@@ -26,7 +32,7 @@ class FirstController: UIViewController {
         }
     }
     
-  var menuVC: MenuViewController!
+ 
     
     
     func scheduleNotification(inSeconds seconds: TimeInterval, completion: (Bool) ->()){
@@ -68,67 +74,98 @@ override func viewDidLoad() {
     super.viewDidLoad()
     print(Realm.Configuration.defaultConfiguration.fileURL!)
     
+    //NSDATA
     
-    menuVC = self.storyboard?.instantiateViewController(withIdentifier: "MenuVC") as! MenuViewController
+    let dateMonthFormatter = DateFormatter()
+    dateMonthFormatter.locale = Locale(identifier: "ru_RU")
+    dateMonthFormatter.dateFormat = "LLLL"
+    let monthForSearch = dateMonthFormatter.string(from: Date()).capFirstLetter()
     
-    let  swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.handleSwipe))
-    swipeRight.direction = .right
+    let dateDayFormatter = DateFormatter()
+    dateDayFormatter.dateFormat = "dd"
+    let dayForSearch = dateDayFormatter.string(from: Date())
     
-    let  swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.handleSwipe))
-    swipeLeft.direction = .left
-    
-    self.view.addGestureRecognizer(swipeRight)
-    self.view.addGestureRecognizer(swipeLeft)
-    
-}
-   
-    
-    
-    
-    
-    @objc func  handleSwipe(gesture: UISwipeGestureRecognizer){
-        switch gesture.direction {
-        case UISwipeGestureRecognizerDirection.right:
-            print("Right")
-            showMenu()
-        case UISwipeGestureRecognizerDirection.left:
-            print("Left")
-            hideMenu()
-        default: break
+    //new code
+
+    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell1")
+    SyncUser.logIn(with: .usernamePassword(username: "aaallleeexxx918@gmail.com", password: "aaallleeexxx918", register: false), server: URL(string: "http://127.0.0.1:9080")!) { user, error in
+        guard let user = user else {
+            fatalError(String(describing: error))
         }
-    }
-    
-    @IBAction func menuBarButtonItem(_ sender: UIBarButtonItem){
-        if AppDelegate.isMenuVC {
-            showMenu()
-        } else{
-            hideMenu()
-        }
-    }
-    
-    func showMenu() {
-        UIView.animate(withDuration: 0.3) {
-            self.menuVC.view.frame = CGRect(x:0, y:60, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
-            self.addChildViewController(self.menuVC)
-            self.view.addSubview(self.menuVC.view)
-            AppDelegate.isMenuVC = false
-        }
-    }
-    
-    func hideMenu(){
-        UIView.animate(withDuration: 0.3, animations: {
-            self.menuVC.view.frame = CGRect(x: -UIScreen.main.bounds.size.width, y:60, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+        
+        let configuration = Realm.Configuration(
+            syncConfiguration: SyncConfiguration(user: user, realmURL: URL(string: "realm://127.0.0.1:9080/~/WhatToday")!, enableSSLValidation: false)
+        )
+        
+        self.realm = try! Realm(configuration: configuration)
+        
+        
+        DispatchQueue.main.async(execute: {
+            // Open Realm
             
-        }) { (finished) in
-            self.menuVC.view.removeFromSuperview()
-            AppDelegate.isMenuVC = true
-        }
-        
-        
+            self.realevents = self.realm.objects(EventDB.self).filter("dataMonth = '\(monthForSearch)' && dataDay = '\(dayForSearch)'")
+            
+            self.notificationToken = self.realevents?.observe { _ in
+                self.updateRemindersList()
+            }
+
+        })
     }
-    
+}
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    func updateRemindersList(){
+        if self.event.realm == nil{
+            self.event = self.realm.objects(EventDB.self).reduce(List<EventDB>()) { (list, element) -> List<EventDB> in
+                list.append(element)
+                return list
+            }
+            
+        }
+        self.tableView.reloadData()
+    }
+}
+
+extension FirstController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return realevents?.count ?? 0
+    }
+    func showTutorial(_ which: Int, link: String) {
+        if let url = URL(string: link) {
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
+            
+            let vc = SFSafariViewController(url: url, configuration: config)
+            present(vc, animated: true)
+        }
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell1")
+            else {
+                return UITableViewCell()
+        }
+        let realevent = realevents?[indexPath.row]
+        cell.textLabel?.text = realevent?.desc
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let realevent = realevents?[indexPath.row]
+        let eventlink = realevent?.link
+        showTutorial(indexPath.row, link: eventlink!)
+    }
+    
+}
+
+extension String {
+    func capFirstLetter() -> String {
+        return prefix(1).uppercased() + dropFirst()
+    }
+    
+    mutating func capitalizeFirstLetter() {
+        self = self.capFirstLetter()
     }
 }

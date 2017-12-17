@@ -14,23 +14,14 @@ import SafariServices
 
 class SecondController: UIViewController, UITableViewDelegate {
     
-    var realm: Realm! //= try! Realm(configuration: configuration)
+    var realm: Realm!
     var notificationToken: NotificationToken?
     var event = List<EventDB>()
     var realevents: Results<EventDB>?
     
-    
     @IBOutlet weak var tableView: UITableView!
     var dayForSearch: String?
     var monthForSearch: String?
-    /*{
-        didSet {
-            guard let monthForSearch = self.monthForSearch else {
-                return
-            }
-          //  self.realevents = (try! Realm()).objects(EventDB.self).filter("dataMonth //= '\(monthForSearch)' && dataDay = '\(dayForSearch ?? "0")'")
-        }
-    }*/
 
     override func viewDidLoad() {
     super.viewDidLoad()
@@ -46,18 +37,15 @@ class SecondController: UIViewController, UITableViewDelegate {
             
             self.realm = try! Realm(configuration: configuration)
 
-            
             DispatchQueue.main.async(execute: {
                 // Open Realm
                 
                 self.realevents = self.realm.objects(EventDB.self).filter("dataMonth = '\(self.monthForSearch ?? "0")' && dataDay = '\(self.dayForSearch ?? "0")'")
         
-               
-                
                 self.notificationToken = self.realevents?.observe { _ in
-                    self.updateRemindersList()
+                   self.updateRemindersList()
                 }
-                //self.updateRemindersList()
+             
             })
 
     }
@@ -75,7 +63,6 @@ class SecondController: UIViewController, UITableViewDelegate {
         self.tableView.reloadData()
     }
 }
-
 
 extension SecondController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

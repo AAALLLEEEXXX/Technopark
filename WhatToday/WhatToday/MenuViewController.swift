@@ -33,7 +33,6 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.labelText.text = myTitle[indexPath.row]
         return cell
     }
-    
-    
+  
     
 }
