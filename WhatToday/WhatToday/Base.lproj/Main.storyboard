@@ -55,10 +55,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Информация" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cB3-4W-l0f">
-                                <rect key="frame" x="130" y="161.5" width="122" height="24.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24.5" id="9Yj-j9-gLI"/>
-                                </constraints>
+                                <rect key="frame" x="126.5" y="161.5" width="122" height="24.5"/>
                                 <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -67,11 +64,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SeM-rR-hbq" firstAttribute="leading" secondItem="EEn-Mf-pm5" secondAttribute="leading" constant="64" id="00C-Pj-Q4e"/>
-                            <constraint firstItem="EEn-Mf-pm5" firstAttribute="trailing" secondItem="cB3-4W-l0f" secondAttribute="trailing" constant="123" id="BA5-jh-AQc"/>
                             <constraint firstItem="EEn-Mf-pm5" firstAttribute="bottom" secondItem="SeM-rR-hbq" secondAttribute="bottom" constant="181" id="Pzi-kH-FgY"/>
-                            <constraint firstItem="cB3-4W-l0f" firstAttribute="leading" secondItem="EEn-Mf-pm5" secondAttribute="leading" constant="130" id="RXu-Sq-M3o"/>
                             <constraint firstItem="EEn-Mf-pm5" firstAttribute="trailing" secondItem="SeM-rR-hbq" secondAttribute="trailing" constant="65" id="bXK-Bk-S5d"/>
                             <constraint firstItem="SeM-rR-hbq" firstAttribute="top" secondItem="cB3-4W-l0f" secondAttribute="bottom" constant="59" id="gdc-cl-WDy"/>
+                            <constraint firstItem="cB3-4W-l0f" firstAttribute="centerX" secondItem="CuJ-qk-MD3" secondAttribute="centerX" id="pK2-jl-cE7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EEn-Mf-pm5"/>
                     </view>
@@ -95,12 +91,24 @@
                                     <constraint firstAttribute="height" constant="603" id="WtZ-6H-Axz"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSE-6B-5lx">
+                                <rect key="frame" x="98" y="611" width="179" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="DfZ-1s-oUN"/>
+                                </constraints>
+                                <state key="normal" title="Получение уведомления">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendNotificationWithSender:" destination="JwE-38-Y4k" eventType="touchUpInside" id="mtM-E1-5ly"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="giB-AQ-PDq">
-                                <rect key="frame" x="0.0" y="210" width="375" height="277"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="521"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="OzU-Qd-Syq"/>
-                                    <constraint firstAttribute="height" constant="277" id="bP8-na-KV7"/>
+                                    <constraint firstAttribute="width" constant="375" id="8ea-Of-e8t"/>
+                                    <constraint firstAttribute="height" constant="521" id="Ssg-1t-dWu"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell1" textLabel="hOq-gh-edy" detailTextLabel="WuG-Z6-p6N" style="IBUITableViewCellStyleValue1" id="FuN-lL-5Rs">
@@ -133,36 +141,19 @@
                                     <outlet property="delegate" destination="JwE-38-Y4k" id="Eug-KS-i4n"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSE-6B-5lx">
-                                <rect key="frame" x="92" y="561" width="190" height="30"/>
-                                <state key="normal" title="Получение уведомления">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="sendNotificationWithSender:" destination="JwE-38-Y4k" eventType="touchUpInside" id="mtM-E1-5ly"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="События произошедшие сегодня" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdF-Bc-kbt">
-                                <rect key="frame" x="54" y="171" width="267" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="giB-AQ-PDq" firstAttribute="trailing" secondItem="gNn-ib-LDu" secondAttribute="trailing" id="ITh-P6-qWF"/>
-                            <constraint firstItem="gNn-ib-LDu" firstAttribute="bottom" secondItem="XSE-6B-5lx" secondAttribute="bottom" constant="76" id="K2E-hb-nRv"/>
+                            <constraint firstItem="giB-AQ-PDq" firstAttribute="trailing" secondItem="gNn-ib-LDu" secondAttribute="trailing" id="5qa-9u-Eyr"/>
+                            <constraint firstItem="giB-AQ-PDq" firstAttribute="leading" secondItem="gNn-ib-LDu" secondAttribute="leading" id="C4r-pf-CPz"/>
                             <constraint firstItem="q69-Yn-5uq" firstAttribute="trailing" secondItem="gNn-ib-LDu" secondAttribute="trailing" id="ME0-qv-Min"/>
-                            <constraint firstItem="XSE-6B-5lx" firstAttribute="leading" secondItem="gNn-ib-LDu" secondAttribute="leading" constant="92" id="Tic-pz-IZe"/>
+                            <constraint firstItem="gNn-ib-LDu" firstAttribute="bottom" secondItem="XSE-6B-5lx" secondAttribute="bottom" constant="26" id="QFm-Yy-f1T"/>
                             <constraint firstItem="q69-Yn-5uq" firstAttribute="bottom" secondItem="gNn-ib-LDu" secondAttribute="bottom" id="UWA-qd-tmL"/>
-                            <constraint firstItem="giB-AQ-PDq" firstAttribute="top" secondItem="hdF-Bc-kbt" secondAttribute="bottom" constant="18" id="WQe-qb-ICc"/>
                             <constraint firstItem="q69-Yn-5uq" firstAttribute="top" secondItem="gNn-ib-LDu" secondAttribute="top" id="ebY-x5-0rr"/>
-                            <constraint firstItem="gNn-ib-LDu" firstAttribute="trailing" secondItem="XSE-6B-5lx" secondAttribute="trailing" constant="93" id="lE1-2j-rFt"/>
-                            <constraint firstItem="giB-AQ-PDq" firstAttribute="leading" secondItem="gNn-ib-LDu" secondAttribute="leading" id="rIY-nW-Grt"/>
-                            <constraint firstItem="hdF-Bc-kbt" firstAttribute="centerX" secondItem="HIy-zg-8k9" secondAttribute="centerX" id="sA4-nf-j0W"/>
+                            <constraint firstItem="giB-AQ-PDq" firstAttribute="top" secondItem="gNn-ib-LDu" secondAttribute="top" id="fUG-yD-GWM"/>
+                            <constraint firstItem="XSE-6B-5lx" firstAttribute="top" secondItem="giB-AQ-PDq" secondAttribute="bottom" constant="26" id="opz-5k-Im5"/>
                             <constraint firstItem="q69-Yn-5uq" firstAttribute="leading" secondItem="gNn-ib-LDu" secondAttribute="leading" id="smC-YE-cGb"/>
-                            <constraint firstItem="gNn-ib-LDu" firstAttribute="bottom" secondItem="giB-AQ-PDq" secondAttribute="bottom" constant="180" id="vBV-8f-uaD"/>
+                            <constraint firstItem="XSE-6B-5lx" firstAttribute="centerX" secondItem="HIy-zg-8k9" secondAttribute="centerX" id="up0-4v-BwK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gNn-ib-LDu"/>
                     </view>
@@ -254,8 +245,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Выбор даты" id="NYg-AZ-2to"/>
                     <connections>
-                        <outlet property="text_field_days" destination="aV1-qx-1lV" id="EMp-Sq-yRK"/>
-                        <outlet property="text_field_months" destination="3F3-ck-kfK" id="McE-1F-0I7"/>
+                        <outlet property="textFieldDays" destination="aV1-qx-1lV" id="qkW-2K-qE9"/>
+                        <outlet property="textFieldMonths" destination="3F3-ck-kfK" id="Hvl-AK-VE8"/>
                         <outlet property="threeButton" destination="1TM-82-klw" id="May-ge-IAP"/>
                         <segue destination="7sc-tj-eGA" kind="show" identifier="dateSend" id="MrR-HP-CQg"/>
                     </connections>

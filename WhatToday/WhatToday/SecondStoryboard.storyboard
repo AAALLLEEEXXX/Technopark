@@ -84,6 +84,7 @@
                     <navigationItem key="navigationItem" title="Data" id="Gxg-Q5-l23"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="resultsUI" destination="Gxg-Q5-l23" id="Yc4-rl-rwt"/>
                         <outlet property="tableView" destination="xOX-JN-vuu" id="tVV-yz-uGX"/>
                     </connections>
                 </viewController>

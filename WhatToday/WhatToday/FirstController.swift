@@ -18,7 +18,7 @@ class FirstController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     var realm: Realm! //= try! Realm(configuration: configuration)
-    var realevents: Results<EventDB>?
+    var realEvents: Results<EventDB>?
     var notificationToken: NotificationToken?
     var event = List<EventDB>()
     
@@ -103,9 +103,9 @@ override func viewDidLoad() {
         DispatchQueue.main.async(execute: {
             // Open Realm
             
-            self.realevents = self.realm.objects(EventDB.self).filter("dataMonth = '\(monthForSearch)' && dataDay = '\(dayForSearch)'")
+            self.realEvents = self.realm.objects(EventDB.self).filter("dataMonth = '\(monthForSearch)' && dataDay = '\(dayForSearch)'")
             
-            self.notificationToken = self.realevents?.observe { _ in
+            self.notificationToken = self.realEvents?.observe { _ in
                 self.updateRemindersList()
             }
 
@@ -132,7 +132,7 @@ override func viewDidLoad() {
 
 extension FirstController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return realevents?.count ?? 0
+        return realEvents?.count ?? 0
     }
     func showTutorial(_ which: Int, link: String) {
         if let url = URL(string: link) {
@@ -148,14 +148,14 @@ extension FirstController: UITableViewDataSource{
             else {
                 return UITableViewCell()
         }
-        let realevent = realevents?[indexPath.row]
-        cell.textLabel?.text = realevent?.desc
+        let realEvent = realEvents?[indexPath.row]
+        cell.textLabel?.text = realEvent?.desc
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let realevent = realevents?[indexPath.row]
-        let eventlink = realevent?.link
-        showTutorial(indexPath.row, link: eventlink!)
+        let realEvent = realEvents?[indexPath.row]
+        let eventLink = realEvent?.link
+        showTutorial(indexPath.row, link: eventLink!)
     }
     
 }
